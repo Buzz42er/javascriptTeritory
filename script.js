@@ -196,7 +196,7 @@ alert ("hello\nmy dude"); // output hello 'new row' my dude
 //If the user clicks OK, the box returns the input value. If the user clicks Cancel, the box returns null.
 
 var user = prompt("please enter your name");
-alert (user);// ok = true, alert writes what you input, cancle alert writes null (cancle = false)
+alert (user);// ok = true, alert writes what you input, cancel alert writes null (cancel = false)
 
 //confirm box
 //A confirm box is often used to have the user verify or accept something.
@@ -210,7 +210,7 @@ if (result == true) {
 }
 else {
     alert("I knew you would stay ;)")
-}
+}//works as designed, you will get it , ok =true, cancel=false
 
 //ok returns true
 //cancel returns false
@@ -219,7 +219,7 @@ else {
 function max(a,b) {
     if (a >= b) return a;
     else return b;
-}
+}//does not output because there is not command for any kind of output
 
 //<script src="script.js">
 
@@ -228,7 +228,9 @@ function main() {
     var rate = parseFloat(readLine(), 10);
     
     console.log(convert(amount, rate));
-}
+}//it was a test on SoloLearn, its not functional by it self, its half of the code
+
+
 //You are making a currency converter app.
 //Create a function called convert, which takes two parameters: the amount to convert, and the rate, and returns the resulting amount.
 //The code to take the parameters as input and call the function is already present in the Playground.
@@ -251,13 +253,190 @@ var person = {
     favColor: "blue",
     height:172
 
-};
+};//no output
 //accessing object properties
 //2 ways
 objectName.propertyName //this is 90% of typescript kinda
 //or
-objectName['propertyName']
+objectName['propertyName'] // no output, just a property
 
 
 var course = {name: "JS", lessons: 41};
-document.write(course.name.length);//output is 2 
+document.write(course.name.length);//output is 2, because we wanted the total number of caracters in property name
+
+//object Metods
+//An object method is a property that contains a function definition. its like a function
+objectName.methodeName() 
+// also, this is called a dot syntax, because you divide object from the property by the dot(.)
+//example >> write() function is a method of the document object
+
+//The Object Constructor >> creating "object type"
+function person( name , age, color ) {
+    this.name = name ;
+    this.age = age ;
+    this.favColor = color ;//doesn't have to be the same name as this.example
+}
+
+var firstPerson = new person("John" , 42 , "green") //new >> create new instance if an object
+var secoundPerson = new person("Amy" , 21 , "red")
+//output under >> green 
+document.write(firstPerson.favColor + "<br/>");
+//output under >> 21 // had some problems with comments on the end of the syntax(unexpected end of input) so i put it above
+document.write(secoundPerson.age + "<br/>");
+
+//Object Initialization
+//object literal or initializer syntax to create single objects
+var John = {name: "John", age: 25};
+var James = {name: "James", age: 21};
+
+//adding methods
+//Methods are functions that are stored as object properties(I think that I already said that, but better twice than none)ž
+
+function person(name, age) {
+    this.name = name; //this means >> the current object
+    this.age = age;
+    this.changeName = function (name) {
+        this.name = name;
+    }
+}
+
+var p = new person("Brandon", 21);
+p.changeName("John");//changes the initial name
+document.write(p.name);
+
+function person(name, age) {
+    this.name= name;  
+    this.age = age;
+    this.yearOfBirth = bornYear;
+  }
+  //name of this function is actually name that we chose in first function(yearOfBirth)
+  function bornYear() {
+    return 2022 - this.age;
+  }
+  
+  var p = new person("jeremy", 43)
+  
+  document.write(p.yearOfBirth()); 
+
+//Contact Manager
+//Quest
+//You are working on a Contact Manager app.
+//You have created the contact object constructor, which has two arguments, name and number.
+//You need to add a print() method to the object, which will output the contact data to the console in the following format: name: number
+//The given code declares two objects and calls their print() methods. Complete the code by defining the print() method for the objects.
+
+function contact(name, number) {
+    this.name = name;
+    this.number = number;
+    //only thing you have to add
+    this.print = function print() {
+    console.log(name + ':' ,number);//+ >> nema razmaka / , >> radi 1 razmak uvijek
+    };
+    //to here, everything else is already provided
+}
+
+var a = new contact("David", 12345);
+var b = new contact("Amy", 987654321);
+//output under >> David: 12345,(novi red) Amy: 987654321
+a.print();
+b.print();
+
+
+//CORE OBJECTS
+//Arrays  []
+//array is an object
+//Arrays store multiple values in a single variable.
+var courses = new Array("HTML", "CSS", "JS");
+
+var courses = new Array("HTML", "CSS", "JS"); 
+var course = courses[0]; // HTML
+courses[1] = "C++"; //Changes the second element 
+
+//arr = short for array
+//other ways to create arrays
+
+var courses = new Array();//you can add elements any time you want
+courses[0] = "HTML";
+courses[1] = "CSS";
+courses[2] = "JS";
+//An array is a special type of object
+//An array uses numbers to access its elements ; an object uses names to access its members
+
+//array literal
+var courses =["HTML", "CSS", "JS"]; // same as * new Array() *
+
+//The length property
+var courses = ["HTML", "CSS", "JS"];
+document.write(courses.length); // output >> 3
+
+//Combining Arrays
+contact()//joins arrays
+
+var c1 = ["html", "css"];
+var c2 = ["js", "c++"];
+var courses = c1.concat(c2); //combines c1 and c2 in one array
+
+document.write(courses[2]);
+
+//Associative Arrays >> pretvara array u object
+var person = [];
+person["age"] = 23; //numbers into strings
+person["name"] = "harry";
+document.write(person["name"]); // harry
+
+//it is better to use an OBJECT when you want the index to be a string
+//Use an array when you want the index to be a number
+
+//math object
+//The Math object allows you to perform mathematical tasks, and includes several properties
+document.write(Math.PI);//its a constant PI
+
+//setInterval
+//setInterval()
+//The setInterval() method calls a function or evaluates an expression at specified intervals (in milliseconds)
+//clearInterval()
+//It will continue calling the function until clearInterval() is called or the window is closed
+
+function myAlert () {
+    alert("hello");
+}
+setInterval(myAlert, 5000);
+clearInterval();
+
+//The Date Object
+var d = new Date();
+//d stores the current date and time
+
+new Date(milliseconds)
+new Date(dateString)
+new Date(year, month, day, hours, minutes, seconds, milliseconds)
+
+//JavaScript dates are calculated in milliseconds from 01 January, 1970 00:00:00 Universal Time (UTC). One day contains 86,400,000 millisecond.
+
+//a clock
+function printTime() {
+    var d = new Date();
+    var hours = d.getHours();
+    var mins = d.getMinutes();
+    var secs = d.getSeconds();
+    document.body.innerHTML = hours+":"+mins+":"+secs;
+}
+setInterval(printTime, 1000);
+
+
+//Store Manager Quest
+//You are working on a Store Manager program, which stores the prices in an array.
+//You need to add functionality to increase the prices by the given amount.
+//The increase variable is taken from user input. You need to increase all the prices in the given array by that amount and output to the console the resulting array.
+
+function main() {
+    var increase = parseInt(readLine(), 10);
+    var prices = [98.99, 15.2, 20, 1026];
+    //your code goes here
+    //I'm using for loop to loop trough every value in array and increasing it by increase var
+    //
+    for(var i=0; i<=prices.length-1 ; i++) {
+        prices[i]=prices[i] + increase;
+    }
+    console.log(prices);
+}
