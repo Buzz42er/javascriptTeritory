@@ -35,7 +35,7 @@ document.write(dec)
 //assingnment operations
 adition = 5;
 adition += years;
-document.write(adition+ "<br/>")
+document.write(adition+ "<br/>") //output =27
 
 var firstVar = 5;
 var secoundVar = 4;
@@ -45,7 +45,7 @@ var secoundVar = 4;
 
 var firstString = "I am learning";
 var secoundString = "JavaScript with SoloLearn.";
-document.write(firstString + secoundString);
+document.write(firstString + secoundString); //output = I am learning JavaScript with SoloLearn.
 
 
 
@@ -59,7 +59,7 @@ if(firstVar > secoundVar) {
     document.write("We can doo thiiiis!!"+ "<br/>")
 }
 else if (secoundVar > firstVar) {
-    document.write("oh nooo"+ "<br/>")
+    document.write("oh nooo"+ "<br/>") //We can doo thiiiis!!
 }
 
 switch (3) {
@@ -71,7 +71,7 @@ switch (3) {
         break;
     default:
         "hello you"
-}
+} // this doesnt do anything
 
 /*
 function main() {
@@ -117,55 +117,56 @@ function main() {
  }*/
 
  //for loop
- const i = 0;
+ var i = 0;
 
  for (; i < 10; ) {
      document.write(i+ "<br/>");
- }
+     i++;
+ } //0,1,2,3,4,5,6,7,8,9 but one under another
 
  //while loop
  //same i from before
  while (i<=10) {
      document.write(i + "<br/>")
      i++;
- }
+ }//0,1,2,3,4,5,6,7,8,9,10 but one under another
 
  //do...while loop
  do {
      document.write(i + "<br/>")
      i++;
  }
- while (i<10);
+ while (i<10);//0,1,2,3,4,5,6,7,8,9
 
  //FUNCTIONS
  //simple function
  function somesimplef() {
-     alert("ahoj")
+     alert("ahoj") //will call alert and alert will say ahoj
  }
 somesimplef(); //you need to call the function to execute
 
 //parametars, for Functions
-function seyHello(name) { //parameter are used by calling the function and placing the value in the parentheses
-    alert ("Hi, "+ name);
+function sayHello(name) { //parameter are used by calling the function and placing the value in the parentheses
+    alert ("Hi, "+ name); //will execute Hi Jure in alert
 
 }
 sayHello("Jure"); // and you can call it multiple times with the other value every time
 
 function myAlert(txt) {
-    alert("Hello" + txt);
+    alert("Hello " + txt);
 }
 
 myAlert("Stuff"); // as a value you can but any kind of string
 myAlert("Test"); //example for more then one value for the same function
-
+//it will execute Hello stuff and then Hello Test
 // using multiple parametars 
 
 function myFunc(nameF, ageF) {
-    document.write(nemeF + "is" + age + "years old.");
+    document.write(nameF + " is " + ageF + " years old.");
 
 }
 
-myFunc("Jure", 22); // more then one value
+myFunc("Jure", 22); // more then one value //output >> Jure is 22 years old.
 // you can also use it as = myFunc(x +y)
 
 //return in functions
@@ -173,6 +174,7 @@ function myFunction(a,b) {
     return a * b;
 }
 var sumery = myFunction(5,6);
+document.write(sumery);//output>> 30
 //return value will end up in x 
 
 //you can also make full calculations inside functions
@@ -180,13 +182,13 @@ function addNumbers(a,b) {
     var c = a+b;
     return c;
 }
-document.write(addNumbers(40,2));
+document.write(addNumbers(40,2)); // output>> 42
 
 //\n - makes an enter command
 //alert, prompt, confirm
 //alert
 //1 parametar can be accepted by the "alert" function
-alert ("hello\nmy dude");
+alert ("hello\nmy dude"); // output hello 'new row' my dude
 
 //prompt box
 //A prompt box is often used to have the user input a value before entering a page.
@@ -194,7 +196,7 @@ alert ("hello\nmy dude");
 //If the user clicks OK, the box returns the input value. If the user clicks Cancel, the box returns null.
 
 var user = prompt("please enter your name");
-alert (user);
+alert (user);// ok = true, alert writes what you input, cancle alert writes null (cancle = false)
 
 //confirm box
 //A confirm box is often used to have the user verify or accept something.
@@ -240,4 +242,22 @@ function convert(amount, rate) {
 }
 
 //OBJECTS
-//
+//JavaScript variables are containers for data values. 
+//Objects are variables too, but they can contain many values.
+
+var person = {
+    name: "Jure" ,//this is a property
+    age:22,
+    favColor: "blue",
+    height:172
+
+};
+//accessing object properties
+//2 ways
+objectName.propertyName //this is 90% of typescript kinda
+//or
+objectName['propertyName']
+
+
+var course = {name: "JS", lessons: 41};
+document.write(course.name.length);//output is 2 
