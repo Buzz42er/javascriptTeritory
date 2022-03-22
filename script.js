@@ -138,4 +138,85 @@ function main() {
  while (i<10);
 
  //FUNCTIONS
- 
+ //simple function
+ function somesimplef() {
+     alert("ahoj")
+ }
+somesimplef(); //you need to call the function to execute
+
+//parametars, for Functions
+function seyHello(name) { //parameter are used by calling the function and placing the value in the parentheses
+    alert ("Hi, "+ name);
+
+}
+sayHello("Jure"); // and you can call it multiple times with the other value every time
+
+function myAlert(txt) {
+    alert("Hello" + txt);
+}
+
+myAlert("Stuff"); // as a value you can but any kind of string
+myAlert("Test"); //example for more then one value for the same function
+
+// using multiple parametars 
+
+function myFunc(nameF, ageF) {
+    document.write(nemeF + "is" + age + "years old.");
+
+}
+
+myFunc("Jure", 22); // more then one value
+// you can also use it as = myFunc(x +y)
+
+//return in functions
+function myFunction(a,b) {
+    return a * b;
+}
+var sumery = myFunction(5,6);
+//return value will end up in x 
+
+//you can also make full calculations inside functions
+function addNumbers(a,b) {
+    var c = a+b;
+    return c;
+}
+document.write(addNumbers(40,2));
+
+//\n - makes an enter command
+//alert, prompt, confirm
+//alert
+//1 parametar can be accepted by the "alert" function
+alert ("hello\nmy dude");
+
+//prompt box
+//A prompt box is often used to have the user input a value before entering a page.
+//When a prompt box pops up, the user will have to click either OK or Cancel to proceed after entering the input value.
+//If the user clicks OK, the box returns the input value. If the user clicks Cancel, the box returns null.
+
+var user = prompt("please enter your name");
+alert (user);
+
+//confirm box
+//A confirm box is often used to have the user verify or accept something.
+//When a confirm box pops up, the user must click either OK or Cancel to proceed.
+//If the user clicks OK, the box returns true. If the user clicks Cancel, the box returns false.
+
+var result = confirm("Do you really want to leave this page?");
+if (result == true) {
+    alert ("Thanks for visiting");
+
+}
+else {
+    alert("I knew you would stay ;)")
+}
+
+//ok returns true
+//cancel returns false
+
+
+function max(a,b) {
+    if (a >= b) return a;
+    else return b;
+}
+
+//<script src="script.js">
