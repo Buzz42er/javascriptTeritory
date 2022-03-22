@@ -15,7 +15,7 @@ Boolean = true / false ;
 // math operations
 
 add = years + 10;
-document.write(add)
+document.write(add+ "<br/>")
 
 /*
 sub = years - 10;
@@ -35,7 +35,7 @@ document.write(dec)
 //assingnment operations
 adition = 5;
 adition += years;
-document.write(adition)
+document.write(adition+ "<br/>")
 
 var firstVar = 5;
 var secoundVar = 4;
@@ -56,10 +56,10 @@ document.write(firstString + secoundString);
 // if statement
 
 if(firstVar > secoundVar) {
-    document.write("We can doo thiiiis!!")
+    document.write("We can doo thiiiis!!"+ "<br/>")
 }
 else if (secoundVar > firstVar) {
-    document.write("oh nooo")
+    document.write("oh nooo"+ "<br/>")
 }
 
 switch (3) {
@@ -117,15 +117,25 @@ function main() {
  }*/
 
  //for loop
- var i = 0;
+ const i = 0;
 
  for (; i < 10; ) {
-     document.write(i);
+     document.write(i+ "<br/>");
  }
 
  //while loop
- var i = 0;
+ //same i from before
  while (i<=10) {
      document.write(i + "<br/>")
      i++;
  }
+
+ //do...while loop
+ do {
+     document.write(i + "<br/>")
+     i++;
+ }
+ while (i<10);
+
+ //FUNCTIONS
+ 
