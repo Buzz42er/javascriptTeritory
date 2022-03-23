@@ -486,7 +486,15 @@ elem.innerHTML = "Hello World!"; // new string put in place of demo element
 var arr = document.getElementsByTagName("p");
 for (var x = 0 ; x < arr.length; x++ ) {
     arr[x].innerHTML = "Hi there, I'm a clone now"; 
-    // every p tag is this string now :)
+    // every p tag is this string now :) >> doesnt work XD
+}
+
+function setText() {
+    var demo = document.getElementById("demo");
+     var arr = demo.childNodes;
+     for(var x=0;x<arr.length;x++) {
+       arr[x].innerHTML = "new text";
+     }//all of the children text is exchanged with new text
 }
 
 
