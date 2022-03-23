@@ -1,3 +1,5 @@
+//stick up :)
+
 const name = "Jure" ;
 var surname ;
 const years = 22 ;
@@ -246,7 +248,7 @@ function convert(amount, rate) {
 //OBJECTS
 //JavaScript variables are containers for data values. 
 //Objects are variables too, but they can contain many values.
-
+// its like an array but with labels
 var person = {
     name: "Jure" ,//this is a property
     age:22,
@@ -272,7 +274,7 @@ objectName.methodeName()
 
 //The Object Constructor >> creating "object type"
 function person( name , age, color ) {
-    this.name = name ;
+    this.name = name ; //this is a method
     this.age = age ;
     this.favColor = color ;//doesn't have to be the same name as this.example
 }
@@ -440,3 +442,51 @@ function main() {
     }
     console.log(prices);
 }
+
+
+//DOM
+// document object model >> structure of HTML file
+// its a model that makes js understand HTML
+// DOM represents a document as a tree structure
+//its like family tree html has children body and head, and body has div nav header as a children and to div for example body is parent 
+//the document object is the owner (or root) of all objects in your webpage
+
+// the document object
+//innerHTML is a property
+//the document object is the root of the DOM
+// its only document when you are accessing it inside the js
+
+// need more info on innerHTML, what kind of property is that???
+
+document.body.innerHTML = "some text";
+
+//Selecting elements
+// all HTML elements are objects
+// those 3 methodes are the most common for selecting HTML elemnets
+//finds element by id
+document.getElementById(id)
+
+//finds elements by class name
+document.getElementByClassName(nameOfTheClass) //probably my most used
+
+//finds elements by tag name
+document.getElementsByTagName(nameOfTheTag) //p, h1, div >> are tags
+
+//this is how you can use DOM
+//elem is the name of "that change" so that its easyer to call it?
+var elem = document.getElementById("demo"); //inside parentheses is the name of that ID of the element
+elem.innerHTML = "Hello World!"; // new string put in place of demo element
+
+//REMINDER >> remind yourself of loops, and relearn functions, that is really important part
+//REMINDER >> its not js its you :)
+
+//still on selecting elements
+
+// to change multiple tags into same string value you can use array
+var arr = document.getElementsByTagName("p");
+for (var x = 0 ; x < arr.length; x++ ) {
+    arr[x].innerHTML = "Hi there, I'm a clone now"; 
+    // every p tag is this string now :)
+}
+
+
